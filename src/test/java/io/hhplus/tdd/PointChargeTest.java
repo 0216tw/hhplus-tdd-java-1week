@@ -107,7 +107,7 @@ public class PointChargeTest extends PointServiceTestBase {
         //when
         IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             pointServiceMock.insertPointHistory(response.id() , response.point() , TransactionType.CHARGE , response.updateMillis());
-        });
+        }); 
 
         //then
         Assertions.assertEquals(thrown.getMessage() , "이력 등록 실패");
