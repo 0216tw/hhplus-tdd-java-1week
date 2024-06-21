@@ -1,10 +1,7 @@
-package service;
+package io.hhplus.tdd.point;
 
 import io.hhplus.tdd.database.PointHistoryTable;
 import io.hhplus.tdd.database.UserPointTable;
-import io.hhplus.tdd.point.PointHistory;
-import io.hhplus.tdd.point.TransactionType;
-import io.hhplus.tdd.point.UserPoint;
 import org.springframework.util.Assert;
 
 import java.util.List;
@@ -20,7 +17,7 @@ public class PointServiceImpl implements PointService {
     }
 
     @Override
-    public UserPoint charge(long id, long amount) {
+    public synchronized UserPoint charge(long id, long amount) {
 
         Assert.isTrue(amount > 0, "충전금액은 0원보다 커야합니다.");
         UserPoint userPoint = search(id);
@@ -32,7 +29,7 @@ public class PointServiceImpl implements PointService {
     }
 
     @Override
-    public UserPoint use(long id, long amount) {
+    public synchronized UserPoint use(long id, long amount) {
 
         Assert.isTrue(amount > 0 , "사용금액은 0원보다 커야합니다.");
 

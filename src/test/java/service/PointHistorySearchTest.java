@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
-public class PointHisotrySearchTest extends PointServiceBase {
+public class PointHistorySearchTest extends PointServiceBase {
 
      /*
         -기능 요구사항 :  포인트 내역을 조회한다.

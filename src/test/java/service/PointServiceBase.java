@@ -2,6 +2,7 @@ package service;
 
 import io.hhplus.tdd.database.PointHistoryTable;
 import io.hhplus.tdd.database.UserPointTable;
+import io.hhplus.tdd.point.PointServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
@@ -21,7 +22,7 @@ public class PointServiceBase {
           기존 TC를 변경하자니 그건 좀 아닌거 같고.. 새로운 TC를 만들자니 이전 TC도 다시 검증할것 같은데 .. 후자로 가자!
 
     * 2차 과제 테스트 및 구현해야 할 대상
-      --동시성 이슈 제어하기
+      --동시성 이슈 제어하기 -> ConcurrentPointTest
     */
 
     @Mock
