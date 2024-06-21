@@ -2,6 +2,7 @@ package io.hhplus.tdd.point;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,9 @@ import java.util.List;
 @RequestMapping("/point")
 public class PointController {
 
+    @Autowired
+    PointService pointService;
+
     private static final Logger log = LoggerFactory.getLogger(PointController.class);
 
     /**
@@ -17,9 +21,10 @@ public class PointController {
      */
     @GetMapping("{id}")
     public UserPoint point(
-            @PathVariable long id
+            @PathVariable("id") long id
     ) {
-        return new UserPoint(0, 0, 0);
+
+        return pointService.search(id);
     }
 
     /**
